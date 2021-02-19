@@ -27,7 +27,7 @@ public class FakeDataService {
         dbSettings.sourceType = DbSettings.SourceType.DATABASE;
         dbSettings.dbType = DbType.POSTGRESQL;
         dbSettings.server = "10.110.1.7/testdb";
-        dbSettings.database = "testdb";
+        dbSettings.database = "public";
         dbSettings.user = "postgres";
         dbSettings.password = "postgres";
     }
