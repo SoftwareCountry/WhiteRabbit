@@ -167,7 +167,7 @@ public class DBConnector {
 		}
 		String url = "jdbc:sqlserver://" + server;
 		if (user == null || user.length() == 0) { // Use Windows integrated security
-			url = url + ";integratedSecurity=true";
+			url = url + "&integratedSecurity=true";
 		}
 		try {
 			return DriverManager.getConnection(url, user, password);

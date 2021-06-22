@@ -133,6 +133,10 @@ public final class DbSettingsAdapter {
             dbSettings.server = String.format("%s/%s", dbSettings.server, dbSettings.database);
             dbSettings.database = schemaName;
         }
+
+        if (schemaName != null && dbSettings.dbType == DbType.MSSQL) {
+            dbSettings.server = String.format("%s;currentSchema=%s", dbSettings.server, schemaName);
+        }
     }
 
     private static DbSettings.SourceType adaptDelimitedFileTypeToSourceType(String fileType) throws DelimitedTextFileNotSupportedException {
